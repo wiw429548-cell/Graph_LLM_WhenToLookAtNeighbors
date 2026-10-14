@@ -3,11 +3,6 @@
 <h3 align="center">When Should an LLM Look at the Neighbours of a Node in a Text-Attributed Graph?</h3>
 
 <p align="center">
-Code, configuration and result files for an anonymous submission to <b>The Web Conference 2027</b><br>
-(research track <i>Graph Algorithms and Modeling for the Web</i>)
-</p>
-
-<p align="center">
 <img alt="16 TAGs" src="https://img.shields.io/badge/TAGs-16-2a78d6">
 <img alt="LLMs" src="https://img.shields.io/badge/LLMs-Qwen2.5--3B%20%7C%207B%20%7C%2032B%20%7C%20Qwen3--8B-6a4fc9">
 <img alt="783k scored prompts" src="https://img.shields.io/badge/scored%20prompts-783k-17a673">
