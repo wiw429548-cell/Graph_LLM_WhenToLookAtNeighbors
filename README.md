@@ -292,14 +292,6 @@ found and DejaVu Sans otherwise.
 
 The paper is under double-blind review; the entry will be completed after the review period.
 
-```bibtex
-@misc{volatile2027neighbours,
-  title  = {Volatile, Not Useless: When Should an LLM Look at the Neighbours of a Node in a Text-Attributed Graph?},
-  author = {Anonymous},
-  note   = {Under review at The ACM Web Conference 2027},
-  year   = {2026}
-}
-```
 
 ## Acknowledgements
 
