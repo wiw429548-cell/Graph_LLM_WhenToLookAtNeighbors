@@ -283,11 +283,6 @@ found and DejaVu Sans otherwise.
 
 ---
 
-## Citation
-
-The paper is under double-blind review; the entry will be completed after the review period.
-
-
 ## Acknowledgements
 
 The graphs come from [LLMNodeBed](https://huggingface.co/datasets/xxwu/LLMNodeBed) (Wu et al., ICML 2025) and
