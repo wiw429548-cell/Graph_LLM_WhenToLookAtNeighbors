@@ -1,0 +1,60 @@
+{
+  "dataset": "history",
+  "llm": "Qwen_Qwen2_5_7B_Instruct",
+  "k_sensitivity": {
+    "k=3": {
+      "acc_f0": 0.123,
+      "random": {
+        "all": 0.341,
+        "needNbr@20%": 0.186,
+        "tokens_f1": 823.931
+      },
+      "similar": {
+        "all": 0.338,
+        "needNbr@20%": 0.186,
+        "tokens_f1": 814.943
+      },
+      "cns": {
+        "all": 0.318,
+        "needNbr@20%": 0.185,
+        "tokens_f1": 813.019
+      }
+    },
+    "k=5": {
+      "acc_f0": 0.123,
+      "random": {
+        "all": 0.341,
+        "needNbr@20%": 0.186,
+        "tokens_f1": 1064.461
+      },
+      "similar": {
+        "all": 0.337,
+        "needNbr@20%": 0.191,
+        "tokens_f1": 1055.442
+      },
+      "cns": {
+        "all": 0.319,
+        "needNbr@20%": 0.194,
+        "tokens_f1": 1048.817
+      }
+    },
+    "k=10": {
+      "acc_f0": 0.123,
+      "random": {
+        "all": 0.303,
+        "needNbr@20%": 0.183,
+        "tokens_f1": 1613.397
+      },
+      "similar": {
+        "all": 0.306,
+        "needNbr@20%": 0.182,
+        "tokens_f1": 1611.756
+      },
+      "cns": {
+        "all": 0.291,
+        "needNbr@20%": 0.183,
+        "tokens_f1": 1595.114
+      }
+    }
+  }
+}

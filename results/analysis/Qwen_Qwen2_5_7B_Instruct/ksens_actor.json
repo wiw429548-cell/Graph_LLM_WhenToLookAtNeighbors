@@ -1,0 +1,60 @@
+{
+  "dataset": "actor",
+  "llm": "Qwen_Qwen2_5_7B_Instruct",
+  "k_sensitivity": {
+    "k=3": {
+      "acc_f0": 0.615,
+      "random": {
+        "all": 0.321,
+        "needNbr@20%": 0.593,
+        "tokens_f1": 505.227
+      },
+      "similar": {
+        "all": 0.353,
+        "needNbr@20%": 0.597,
+        "tokens_f1": 472.617
+      },
+      "cns": {
+        "all": 0.309,
+        "needNbr@20%": 0.592,
+        "tokens_f1": 517.86
+      }
+    },
+    "k=5": {
+      "acc_f0": 0.615,
+      "random": {
+        "all": 0.321,
+        "needNbr@20%": 0.594,
+        "tokens_f1": 656.771
+      },
+      "similar": {
+        "all": 0.348,
+        "needNbr@20%": 0.6,
+        "tokens_f1": 615.249
+      },
+      "cns": {
+        "all": 0.308,
+        "needNbr@20%": 0.59,
+        "tokens_f1": 677.946
+      }
+    },
+    "k=10": {
+      "acc_f0": 0.615,
+      "random": {
+        "all": 0.367,
+        "needNbr@20%": 0.6,
+        "tokens_f1": 1009.987
+      },
+      "similar": {
+        "all": 0.393,
+        "needNbr@20%": 0.599,
+        "tokens_f1": 959.488
+      },
+      "cns": {
+        "all": 0.352,
+        "needNbr@20%": 0.596,
+        "tokens_f1": 1035.787
+      }
+    }
+  }
+}

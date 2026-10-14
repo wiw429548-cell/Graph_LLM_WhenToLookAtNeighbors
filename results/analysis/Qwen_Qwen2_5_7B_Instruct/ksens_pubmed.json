@@ -1,0 +1,60 @@
+{
+  "dataset": "pubmed",
+  "llm": "Qwen_Qwen2_5_7B_Instruct",
+  "k_sensitivity": {
+    "k=3": {
+      "acc_f0": 0.776,
+      "random": {
+        "all": 0.699,
+        "needNbr@20%": 0.756,
+        "tokens_f1": 1071.645
+      },
+      "similar": {
+        "all": 0.689,
+        "needNbr@20%": 0.75,
+        "tokens_f1": 1076.011
+      },
+      "cns": {
+        "all": 0.686,
+        "needNbr@20%": 0.747,
+        "tokens_f1": 1060.212
+      }
+    },
+    "k=5": {
+      "acc_f0": 0.776,
+      "random": {
+        "all": 0.655,
+        "needNbr@20%": 0.746,
+        "tokens_f1": 1443.99
+      },
+      "similar": {
+        "all": 0.639,
+        "needNbr@20%": 0.746,
+        "tokens_f1": 1447.797
+      },
+      "cns": {
+        "all": 0.644,
+        "needNbr@20%": 0.74,
+        "tokens_f1": 1427.315
+      }
+    },
+    "k=10": {
+      "acc_f0": 0.776,
+      "random": {
+        "all": 0.601,
+        "needNbr@20%": 0.728,
+        "tokens_f1": 2318.242
+      },
+      "similar": {
+        "all": 0.607,
+        "needNbr@20%": 0.733,
+        "tokens_f1": 2327.199
+      },
+      "cns": {
+        "all": 0.592,
+        "needNbr@20%": 0.728,
+        "tokens_f1": 2296.807
+      }
+    }
+  }
+}

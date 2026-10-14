@@ -1,0 +1,7150 @@
+{
+  "dataset": "actor",
+  "llm": "Qwen/Qwen3-8B",
+  "homophily": 0.5554455445544555,
+  "C": 5,
+  "n_test": 1000,
+  "n_val": 300,
+  "k": 5,
+  "acc_f0": 0.515,
+  "acc_f1_full": {
+    "random": 0.251,
+    "similar": 0.246,
+    "cns": 0.245,
+    "cns_id": 0.24,
+    "cns_nored": 0.248,
+    "cns_hints": 0.328,
+    "keywords": 0.373,
+    "summary": 0.489
+  },
+  "tokens_f0": 191.101,
+  "tokens_f1_only": {
+    "random": 660.771,
+    "similar": 619.249,
+    "cns": 681.007,
+    "cns_id": 673.958,
+    "cns_nored": 647.391,
+    "cns_hints": 740.025,
+    "keywords": 397.697,
+    "summary": 872.703
+  },
+  "engine": {
+    "model": "Qwen/Qwen3-8B",
+    "tp_requested": 1,
+    "tp": 1,
+    "attempt": 1,
+    "max_model_len": 8192,
+    "gpu_mem": 0.85,
+    "enforce_eager": false,
+    "errors": [],
+    "fallback": false,
+    "argv": "needn/run_llm.py --dataset actor --llm Qwen/Qwen3-8B",
+    "time": "Sun Oct 11 05:02:19 2026",
+    "backend": "vllm"
+  },
+  "llm_stats": {
+    "option_calls": 13376,
+    "option_no_letter_in_topk": 0,
+    "truncated_prompts": 0
+  },
+  "acc_nb_posterior": 0.498,
+  "frac_no_neighbours": 0.0,
+  "static_baselines": {
+    "ensemble f0+f1(CNS)": {
+      "acc": 0.468,
+      "tokens_per_node": 872.108
+    },
+    "max-confidence f0 vs f1(CNS)": {
+      "acc": 0.468,
+      "tokens_per_node": 872.108
+    }
+  },
+  "crossover_by_ambiguity": [
+    {
+      "bin": 0,
+      "A_range": [
+        8.358017660649351e-08,
+        0.0009601455868688858
+      ],
+      "n": 200,
+      "acc_f0": 0.785,
+      "acc_f1_random": 0.26,
+      "acc_f1_similar": 0.245,
+      "acc_f1_cns": 0.235,
+      "acc_f1_cns_id": 0.22,
+      "acc_f1_cns_nored": 0.235,
+      "acc_f1_cns_hints": 0.37,
+      "acc_f1_keywords": 0.54,
+      "acc_f1_summary": 0.695
+    },
+    {
+      "bin": 1,
+      "A_range": [
+        0.0009610478622910321,
+        0.02028657640972602
+      ],
+      "n": 200,
+      "acc_f0": 0.65,
+      "acc_f1_random": 0.255,
+      "acc_f1_similar": 0.255,
+      "acc_f1_cns": 0.25,
+      "acc_f1_cns_id": 0.245,
+      "acc_f1_cns_nored": 0.27,
+      "acc_f1_cns_hints": 0.395,
+      "acc_f1_keywords": 0.445,
+      "acc_f1_summary": 0.565
+    },
+    {
+      "bin": 2,
+      "A_range": [
+        0.020416610878014493,
+        0.11907369002070228
+      ],
+      "n": 200,
+      "acc_f0": 0.455,
+      "acc_f1_random": 0.235,
+      "acc_f1_similar": 0.24,
+      "acc_f1_cns": 0.24,
+      "acc_f1_cns_id": 0.235,
+      "acc_f1_cns_nored": 0.24,
+      "acc_f1_cns_hints": 0.32,
+      "acc_f1_keywords": 0.325,
+      "acc_f1_summary": 0.465
+    },
+    {
+      "bin": 3,
+      "A_range": [
+        0.1191313087735066,
+        0.3801197285161888
+      ],
+      "n": 200,
+      "acc_f0": 0.37,
+      "acc_f1_random": 0.265,
+      "acc_f1_similar": 0.255,
+      "acc_f1_cns": 0.265,
+      "acc_f1_cns_id": 0.265,
+      "acc_f1_cns_nored": 0.27,
+      "acc_f1_cns_hints": 0.31,
+      "acc_f1_keywords": 0.305,
+      "acc_f1_summary": 0.4
+    },
+    {
+      "bin": 4,
+      "A_range": [
+        0.38045037125928277,
+        0.8599650737434335
+      ],
+      "n": 200,
+      "acc_f0": 0.315,
+      "acc_f1_random": 0.24,
+      "acc_f1_similar": 0.235,
+      "acc_f1_cns": 0.235,
+      "acc_f1_cns_id": 0.235,
+      "acc_f1_cns_nored": 0.225,
+      "acc_f1_cns_hints": 0.245,
+      "acc_f1_keywords": 0.25,
+      "acc_f1_summary": 0.32
+    }
+  ],
+  "learned_router_fitted": true,
+  "acc_f0_calibrated": 0.435,
+  "curves": {
+    "cns|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501395,
+          "acc_std": 0.004923309354489117,
+          "tokens_per_node": 225.083575
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.48777000000000004,
+          "acc_std": 0.007041810846650176,
+          "tokens_per_node": 259.136885
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.46131999999999995,
+          "acc_std": 0.009412629813181852,
+          "tokens_per_node": 327.19968
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.43392,
+          "acc_std": 0.010885935880759182,
+          "tokens_per_node": 395.349195
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.379565,
+          "acc_std": 0.011316173160569796,
+          "tokens_per_node": 531.52655
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.32530000000000003,
+          "acc_std": 0.010565036677645757,
+          "tokens_per_node": 667.73584
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24500000000000008,
+          "acc_std": 8.326672684688674e-17,
+          "tokens_per_node": 872.1080000000001
+        }
+      ],
+      "area": 0.37973550000000006
+    },
+    "cns|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 228.482
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 264.781
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.47,
+          "tokens_per_node": 336.351
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.438,
+          "tokens_per_node": 410.527
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.369,
+          "tokens_per_node": 553.871
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.321,
+          "tokens_per_node": 691.501
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.37905
+    },
+    "cns_costview2|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 4911.103
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 4947.402
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.47,
+          "tokens_per_node": 5018.972
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.438,
+          "tokens_per_node": 5093.148
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.369,
+          "tokens_per_node": 5236.492
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.321,
+          "tokens_per_node": 5374.122
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.37905
+    },
+    "cns|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 224.221
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 256.967
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 324.196
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 393.294
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.456,
+          "tokens_per_node": 530.276
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.398,
+          "tokens_per_node": 664.618
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.42597500000000005
+    },
+    "cns_costview2|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 4906.842
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 4939.588
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 5006.817
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 5075.915
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.456,
+          "tokens_per_node": 5212.897
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.398,
+          "tokens_per_node": 5347.239
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.42597500000000005
+    },
+    "cns|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.502,
+          "tokens_per_node": 222.237
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 253.384
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.444,
+          "tokens_per_node": 319.053
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.4,
+          "tokens_per_node": 386.275
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.326,
+          "tokens_per_node": 524.97
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.287,
+          "tokens_per_node": 666.628
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.35267499999999996
+    },
+    "cns_costview2|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.502,
+          "tokens_per_node": 4904.858
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 4936.005
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.444,
+          "tokens_per_node": 5001.674
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.4,
+          "tokens_per_node": 5068.896
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.326,
+          "tokens_per_node": 5207.591
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.287,
+          "tokens_per_node": 5349.249
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.35267499999999996
+    },
+    "cns|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 224.003
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.502,
+          "tokens_per_node": 255.622
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 325.197
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 393.845
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.451,
+          "tokens_per_node": 529.362
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.395,
+          "tokens_per_node": 665.191
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.42352500000000004
+    },
+    "cns_costview2|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 4906.624
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.502,
+          "tokens_per_node": 4938.243
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 5007.818
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 5076.466
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.451,
+          "tokens_per_node": 5211.983
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.395,
+          "tokens_per_node": 5347.812
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.42352500000000004
+    },
+    "cns|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 227.18
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 263.37
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.49,
+          "tokens_per_node": 331.503
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 398.909
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.437,
+          "tokens_per_node": 534.117
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.356,
+          "tokens_per_node": 668.542
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.4106
+    },
+    "cns_costview2|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 4909.801
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 4945.991
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.49,
+          "tokens_per_node": 5014.124
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 5081.53
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.437,
+          "tokens_per_node": 5216.738
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.356,
+          "tokens_per_node": 5351.163
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.4106
+    },
+    "cns|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 227.778
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 264.045
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 333.506
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 400.452
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.44,
+          "tokens_per_node": 534.078
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.361,
+          "tokens_per_node": 668.605
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.4131499999999999
+    },
+    "cns_costview2|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 4910.399
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 4946.666
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 5016.127
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 5083.073
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.44,
+          "tokens_per_node": 5216.699
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.361,
+          "tokens_per_node": 5351.226
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.4131499999999999
+    },
+    "cns|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 227.78
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 264.036
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 333.34
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 400.01
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.439,
+          "tokens_per_node": 533.6
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.36,
+          "tokens_per_node": 668.69
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.41309999999999997
+    },
+    "cns_costview2|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 4910.401
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 4946.657
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 5015.961
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 5082.631
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.439,
+          "tokens_per_node": 5216.221
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.36,
+          "tokens_per_node": 5351.311
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.41309999999999997
+    },
+    "cns|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.512,
+          "tokens_per_node": 225.228
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 260.595
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.491,
+          "tokens_per_node": 328.533
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.486,
+          "tokens_per_node": 396.671
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.454,
+          "tokens_per_node": 533.336
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.387,
+          "tokens_per_node": 669.083
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.42264999999999997
+    },
+    "cns_costview2|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.512,
+          "tokens_per_node": 4907.849
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 4943.216
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.491,
+          "tokens_per_node": 5011.154
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.486,
+          "tokens_per_node": 5079.292
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.454,
+          "tokens_per_node": 5215.957
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.387,
+          "tokens_per_node": 5351.704
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.42264999999999997
+    },
+    "cns|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 227.843
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 264.373
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 333.058
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.487,
+          "tokens_per_node": 399.42
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.433,
+          "tokens_per_node": 533.822
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.355,
+          "tokens_per_node": 668.598
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.411
+    },
+    "cns_costview2|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 4910.464
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 4946.994
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 5015.679
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.487,
+          "tokens_per_node": 5082.041
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.433,
+          "tokens_per_node": 5216.443
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.355,
+          "tokens_per_node": 5351.219
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.411
+    },
+    "cns|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.507,
+          "tokens_per_node": 223.333
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.506,
+          "tokens_per_node": 255.46
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.493,
+          "tokens_per_node": 320.711
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.469,
+          "tokens_per_node": 385.444
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.41,
+          "tokens_per_node": 518.367
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.335,
+          "tokens_per_node": 657.688
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.398325
+    },
+    "cns_costview2|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.507,
+          "tokens_per_node": 4905.954
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.506,
+          "tokens_per_node": 4938.081
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.493,
+          "tokens_per_node": 5003.332
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.469,
+          "tokens_per_node": 5068.065
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.41,
+          "tokens_per_node": 5200.988
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.335,
+          "tokens_per_node": 5340.309
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.398325
+    },
+    "cns|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.5,
+          "tokens_per_node": 224.422
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 257.934
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.463,
+          "tokens_per_node": 325.363
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.46,
+          "tokens_per_node": 394.797
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.425,
+          "tokens_per_node": 529.121
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.38,
+          "tokens_per_node": 666.819
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.40652499999999997
+    },
+    "cns_costview2|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.5,
+          "tokens_per_node": 4907.043
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 4940.555
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.463,
+          "tokens_per_node": 5007.984
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.46,
+          "tokens_per_node": 5077.418
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.425,
+          "tokens_per_node": 5211.742
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.38,
+          "tokens_per_node": 5349.44
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.40652499999999997
+    },
+    "cns|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.506,
+          "tokens_per_node": 226.048
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 263.328
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.48,
+          "tokens_per_node": 334.59
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.455,
+          "tokens_per_node": 402.77
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.4,
+          "tokens_per_node": 537.82
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.298,
+          "tokens_per_node": 674.173
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.3827999999999999
+    },
+    "cns_costview2|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.506,
+          "tokens_per_node": 4908.669
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 4945.949
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.48,
+          "tokens_per_node": 5017.211
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.455,
+          "tokens_per_node": 5085.391
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.4,
+          "tokens_per_node": 5220.441
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.298,
+          "tokens_per_node": 5356.794
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.3827999999999999
+    },
+    "cns|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 227.983
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.509,
+          "tokens_per_node": 264.816
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 334.88
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.476,
+          "tokens_per_node": 400.356
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.429,
+          "tokens_per_node": 534.162
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.355,
+          "tokens_per_node": 669.496
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.40905
+    },
+    "cns_costview2|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 4910.604
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.509,
+          "tokens_per_node": 4947.437
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 5017.501
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.476,
+          "tokens_per_node": 5082.977
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.429,
+          "tokens_per_node": 5216.783
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.355,
+          "tokens_per_node": 5352.117
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.40905
+    },
+    "cns|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.105
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 262.901
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 331.308
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.485,
+          "tokens_per_node": 397.81
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.442,
+          "tokens_per_node": 532.727
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.389,
+          "tokens_per_node": 667.862
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.421125
+    },
+    "cns_costview2|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 4908.726
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 4945.522
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 5013.929
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.485,
+          "tokens_per_node": 5080.431
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.442,
+          "tokens_per_node": 5215.348
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.389,
+          "tokens_per_node": 5350.483
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.421125
+    },
+    "cns|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 225.932
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 260.884
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.684,
+          "tokens_per_node": 329.954
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.684,
+          "tokens_per_node": 396.899
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.684,
+          "tokens_per_node": 530.376
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.545,
+          "tokens_per_node": 666.763
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 872.108
+        }
+      ],
+      "area": 0.56805
+    },
+    "cns_costview2|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 4873.722
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 4908.553
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 4943.505
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.684,
+          "tokens_per_node": 5012.575
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.684,
+          "tokens_per_node": 5079.52
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.684,
+          "tokens_per_node": 5212.997
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.545,
+          "tokens_per_node": 5349.384
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.245,
+          "tokens_per_node": 5554.729
+        }
+      ],
+      "area": 0.56805
+    },
+    "similar|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.50145,
+          "acc_std": 0.004946463383064717,
+          "tokens_per_node": 221.98465500000003
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.48772999999999994,
+          "acc_std": 0.00724065604762442,
+          "tokens_per_node": 252.904595
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.46149500000000004,
+          "acc_std": 0.009350399724075961,
+          "tokens_per_node": 314.76818
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.43414500000000006,
+          "acc_std": 0.010603960345078633,
+          "tokens_per_node": 376.66553999999996
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.380055,
+          "acc_std": 0.011107743920346748,
+          "tokens_per_node": 500.67323000000005
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.326195,
+          "acc_std": 0.010588058131687799,
+          "tokens_per_node": 624.574485
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24600000000000002,
+          "acc_std": 2.7755575615628914e-17,
+          "tokens_per_node": 810.3500000000003
+        }
+      ],
+      "area": 0.38025825
+    },
+    "similar|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 229.839
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.494,
+          "tokens_per_node": 265.291
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.47,
+          "tokens_per_node": 330.79
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.44,
+          "tokens_per_node": 395.673
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.373,
+          "tokens_per_node": 520.832
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.329,
+          "tokens_per_node": 643.523
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.382225
+    },
+    "similar|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 220.438
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 248.793
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 309.955
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 372.024
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.453,
+          "tokens_per_node": 494.115
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.393,
+          "tokens_per_node": 616.219
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.4241250000000001
+    },
+    "similar|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501,
+          "tokens_per_node": 219.419
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 247.979
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.44,
+          "tokens_per_node": 307.933
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.391,
+          "tokens_per_node": 369.519
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.321,
+          "tokens_per_node": 495.673
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.286,
+          "tokens_per_node": 626.018
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.34977499999999995
+    },
+    "similar|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 220.244
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.502,
+          "tokens_per_node": 248.725
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 311.048
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.48,
+          "tokens_per_node": 373.109
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.449,
+          "tokens_per_node": 493.607
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.389,
+          "tokens_per_node": 616.643
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.421375
+    },
+    "similar|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 222.968
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 256.365
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.487,
+          "tokens_per_node": 317.673
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 377.882
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.435,
+          "tokens_per_node": 497.355
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.356,
+          "tokens_per_node": 622.24
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.4099
+    },
+    "similar|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 222.87
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 256.327
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.491,
+          "tokens_per_node": 318.213
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 378.186
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.438,
+          "tokens_per_node": 497.417
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.361,
+          "tokens_per_node": 621.692
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.41229999999999994
+    },
+    "similar|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 222.924
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 256.434
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 318.521
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 377.941
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.437,
+          "tokens_per_node": 496.977
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.359,
+          "tokens_per_node": 622.137
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.412
+    },
+    "similar|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 223.674
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 256.722
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.49,
+          "tokens_per_node": 318.441
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.486,
+          "tokens_per_node": 380.565
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.451,
+          "tokens_per_node": 502.644
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.379,
+          "tokens_per_node": 625.673
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.419975
+    },
+    "similar|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 223.268
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 256.905
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 318.041
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.485,
+          "tokens_per_node": 377.737
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.431,
+          "tokens_per_node": 497.873
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.354,
+          "tokens_per_node": 623.246
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.41
+    },
+    "similar|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 219.062
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.508,
+          "tokens_per_node": 246.28
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 303.036
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.469,
+          "tokens_per_node": 360.385
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.409,
+          "tokens_per_node": 479.751
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.333,
+          "tokens_per_node": 606.497
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.3984249999999999
+    },
+    "similar|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501,
+          "tokens_per_node": 219.84
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.49,
+          "tokens_per_node": 248.952
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.466,
+          "tokens_per_node": 308.544
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.461,
+          "tokens_per_node": 370.687
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.425,
+          "tokens_per_node": 493.258
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.378,
+          "tokens_per_node": 618.78
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.406825
+    },
+    "similar|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.506,
+          "tokens_per_node": 221.693
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.496,
+          "tokens_per_node": 254.443
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.479,
+          "tokens_per_node": 319.505
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.454,
+          "tokens_per_node": 379.916
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.398,
+          "tokens_per_node": 503.504
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.299,
+          "tokens_per_node": 632.422
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.382625
+    },
+    "similar|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 224.58
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.508,
+          "tokens_per_node": 257.596
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 320.03
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.476,
+          "tokens_per_node": 379.165
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.427,
+          "tokens_per_node": 498.41
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.356,
+          "tokens_per_node": 625.111
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.40877499999999994
+    },
+    "similar|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 221.509
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 254.274
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.498,
+          "tokens_per_node": 316.13
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.481,
+          "tokens_per_node": 375.721
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.439,
+          "tokens_per_node": 495.806
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.383,
+          "tokens_per_node": 619.285
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.41855
+    },
+    "similar|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 223.13
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 256.116
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.678,
+          "tokens_per_node": 320.318
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.678,
+          "tokens_per_node": 379.624
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.678,
+          "tokens_per_node": 499.992
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.546,
+          "tokens_per_node": 620.705
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.246,
+          "tokens_per_node": 810.35
+        }
+      ],
+      "area": 0.56575
+    },
+    "random|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.5015550000000001,
+          "acc_std": 0.004988684696390427,
+          "tokens_per_node": 224.01208999999994
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.48829999999999996,
+          "acc_std": 0.007039886362719221,
+          "tokens_per_node": 257.02512
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.462395,
+          "acc_std": 0.00916291301934051,
+          "tokens_per_node": 323.05275
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.43563,
+          "acc_std": 0.010626528125403902,
+          "tokens_per_node": 389.0679150000001
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.38245500000000004,
+          "acc_std": 0.011237347329330004,
+          "tokens_per_node": 521.299925
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.32947499999999996,
+          "acc_std": 0.010549377943746257,
+          "tokens_per_node": 653.4547500000001
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.25099999999999995,
+          "acc_std": 5.551115123125783e-17,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.382669
+    },
+    "random|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.513,
+          "tokens_per_node": 227.8
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.498,
+          "tokens_per_node": 263.756
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.473,
+          "tokens_per_node": 334.042
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.442,
+          "tokens_per_node": 405.378
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.377,
+          "tokens_per_node": 541.348
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.333,
+          "tokens_per_node": 674.0
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.385775
+    },
+    "random|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 223.259
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 254.003
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.5,
+          "tokens_per_node": 320.504
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 386.777
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.456,
+          "tokens_per_node": 519.72
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.4,
+          "tokens_per_node": 651.327
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.4277
+    },
+    "random|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.502,
+          "tokens_per_node": 222.525
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.489,
+          "tokens_per_node": 252.758
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.442,
+          "tokens_per_node": 316.884
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.397,
+          "tokens_per_node": 381.838
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.33,
+          "tokens_per_node": 516.279
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.296,
+          "tokens_per_node": 654.917
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.35605000000000003
+    },
+    "random|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 222.806
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 254.316
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 321.909
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 388.944
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.452,
+          "tokens_per_node": 519.797
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.398,
+          "tokens_per_node": 651.83
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.4256000000000001
+    },
+    "random|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.336
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 261.449
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.488,
+          "tokens_per_node": 328.379
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 392.541
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.436,
+          "tokens_per_node": 523.579
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.357,
+          "tokens_per_node": 654.743
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.41119999999999995
+    },
+    "random|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 225.957
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 261.995
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.492,
+          "tokens_per_node": 328.717
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 392.847
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.439,
+          "tokens_per_node": 522.486
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.363,
+          "tokens_per_node": 653.192
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.41385
+    },
+    "random|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 225.816
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 261.987
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 328.791
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 392.544
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.438,
+          "tokens_per_node": 522.169
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.361,
+          "tokens_per_node": 653.36
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.41355
+    },
+    "random|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 224.819
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 259.158
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.489,
+          "tokens_per_node": 325.595
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.485,
+          "tokens_per_node": 391.962
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.453,
+          "tokens_per_node": 522.608
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.382,
+          "tokens_per_node": 655.601
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.42155
+    },
+    "random|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.356
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 262.133
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.496,
+          "tokens_per_node": 328.224
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.485,
+          "tokens_per_node": 392.409
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.432,
+          "tokens_per_node": 522.672
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.358,
+          "tokens_per_node": 654.315
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.41205
+    },
+    "random|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.507,
+          "tokens_per_node": 221.97
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.506,
+          "tokens_per_node": 253.202
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 316.642
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.468,
+          "tokens_per_node": 380.301
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.412,
+          "tokens_per_node": 508.553
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.334,
+          "tokens_per_node": 643.971
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.399425
+    },
+    "random|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501,
+          "tokens_per_node": 222.77
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.49,
+          "tokens_per_node": 254.609
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.464,
+          "tokens_per_node": 321.452
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.46,
+          "tokens_per_node": 387.981
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.425,
+          "tokens_per_node": 519.736
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.381,
+          "tokens_per_node": 653.565
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.40797500000000003
+    },
+    "random|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.505,
+          "tokens_per_node": 225.905
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 261.11
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.48,
+          "tokens_per_node": 331.25
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.455,
+          "tokens_per_node": 395.947
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.4,
+          "tokens_per_node": 528.806
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.302,
+          "tokens_per_node": 660.216
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.38464999999999994
+    },
+    "random|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 227.582
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.509,
+          "tokens_per_node": 263.202
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 330.443
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.477,
+          "tokens_per_node": 393.803
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.429,
+          "tokens_per_node": 523.174
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.358,
+          "tokens_per_node": 654.912
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.41064999999999996
+    },
+    "random|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 224.043
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 259.578
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 325.818
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 391.191
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.441,
+          "tokens_per_node": 522.385
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.389,
+          "tokens_per_node": 653.829
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.42160000000000003
+    },
+    "random|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 226.384
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 260.451
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.676,
+          "tokens_per_node": 328.608
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.676,
+          "tokens_per_node": 393.047
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.676,
+          "tokens_per_node": 523.139
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.551,
+          "tokens_per_node": 654.311
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.251,
+          "tokens_per_node": 851.872
+        }
+      ],
+      "area": 0.56685
+    },
+    "cns_id|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501075,
+          "acc_std": 0.004989927354180624,
+          "tokens_per_node": 224.69896
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.48713999999999996,
+          "acc_std": 0.0072581264800222435,
+          "tokens_per_node": 258.332715
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.46017,
+          "acc_std": 0.009559869245967743,
+          "tokens_per_node": 325.71205000000003
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.43229499999999993,
+          "acc_std": 0.010950706598206354,
+          "tokens_per_node": 393.11715499999997
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.37697,
+          "acc_std": 0.011357336835719904,
+          "tokens_per_node": 527.984225
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.32204,
+          "acc_std": 0.010682153340970169,
+          "tokens_per_node": 662.8780549999999
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24000000000000007,
+          "acc_std": 8.326672684688674e-17,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.3772295
+    },
+    "cns_id|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 228.012
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 263.812
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.47,
+          "tokens_per_node": 335.395
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.438,
+          "tokens_per_node": 408.721
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.37,
+          "tokens_per_node": 550.641
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.323,
+          "tokens_per_node": 686.477
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.379
+    },
+    "cns_id|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 223.218
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 254.009
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 320.002
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 386.941
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.455,
+          "tokens_per_node": 522.82
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.397,
+          "tokens_per_node": 657.406
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.424925
+    },
+    "cns_id|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.5,
+          "tokens_per_node": 221.855
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.485,
+          "tokens_per_node": 252.535
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.438,
+          "tokens_per_node": 317.84
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.392,
+          "tokens_per_node": 385.031
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.318,
+          "tokens_per_node": 523.361
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.28,
+          "tokens_per_node": 663.961
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.34645
+    },
+    "cns_id|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 223.626
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.502,
+          "tokens_per_node": 253.906
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 320.732
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 388.255
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.451,
+          "tokens_per_node": 522.246
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.394,
+          "tokens_per_node": 657.867
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.422375
+    },
+    "cns_id|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.315
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 261.243
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.489,
+          "tokens_per_node": 328.97
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 395.062
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.435,
+          "tokens_per_node": 528.344
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.353,
+          "tokens_per_node": 663.64
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.4086
+    },
+    "cns_id|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 226.456
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 261.719
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.492,
+          "tokens_per_node": 329.913
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 397.197
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.438,
+          "tokens_per_node": 528.896
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.357,
+          "tokens_per_node": 664.014
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.41065
+    },
+    "cns_id|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 226.616
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 261.793
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 329.907
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 396.82
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.437,
+          "tokens_per_node": 528.547
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.356,
+          "tokens_per_node": 664.295
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.41059999999999997
+    },
+    "cns_id|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.512,
+          "tokens_per_node": 224.792
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 259.25
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.493,
+          "tokens_per_node": 324.995
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.488,
+          "tokens_per_node": 391.028
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.453,
+          "tokens_per_node": 526.993
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.385,
+          "tokens_per_node": 662.384
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.42169999999999996
+    },
+    "cns_id|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.69
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 262.386
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.496,
+          "tokens_per_node": 329.867
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.485,
+          "tokens_per_node": 396.295
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.431,
+          "tokens_per_node": 529.229
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.351,
+          "tokens_per_node": 664.883
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.40845
+    },
+    "cns_id|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.506,
+          "tokens_per_node": 222.909
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.506,
+          "tokens_per_node": 253.518
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.494,
+          "tokens_per_node": 317.751
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.467,
+          "tokens_per_node": 380.847
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.408,
+          "tokens_per_node": 513.15
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.331,
+          "tokens_per_node": 651.11
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.39592499999999997
+    },
+    "cns_id|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501,
+          "tokens_per_node": 223.635
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 256.444
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.463,
+          "tokens_per_node": 322.808
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.459,
+          "tokens_per_node": 391.654
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.425,
+          "tokens_per_node": 524.487
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.377,
+          "tokens_per_node": 659.79
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.40492500000000003
+    },
+    "cns_id|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.506,
+          "tokens_per_node": 226.208
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.495,
+          "tokens_per_node": 262.377
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.48,
+          "tokens_per_node": 333.996
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.455,
+          "tokens_per_node": 400.09
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.396,
+          "tokens_per_node": 534.649
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.294,
+          "tokens_per_node": 670.831
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.38025
+    },
+    "cns_id|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.774
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.509,
+          "tokens_per_node": 262.888
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.498,
+          "tokens_per_node": 332.9
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.476,
+          "tokens_per_node": 397.893
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.427,
+          "tokens_per_node": 530.276
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.351,
+          "tokens_per_node": 666.468
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.4068
+    },
+    "cns_id|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 224.821
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 260.406
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 326.901
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.483,
+          "tokens_per_node": 392.382
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.439,
+          "tokens_per_node": 526.415
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.386,
+          "tokens_per_node": 661.846
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.41879999999999995
+    },
+    "cns_id|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 227.237
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 262.282
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.685,
+          "tokens_per_node": 331.142
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.685,
+          "tokens_per_node": 396.849
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.685,
+          "tokens_per_node": 525.154
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.54,
+          "tokens_per_node": 659.933
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24,
+          "tokens_per_node": 865.059
+        }
+      ],
+      "area": 0.5665
+    },
+    "cns_nored|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.50154,
+          "acc_std": 0.004932382791308886,
+          "tokens_per_node": 223.39467500000003
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.487945,
+          "acc_std": 0.0072589238183080615,
+          "tokens_per_node": 255.74737999999996
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.46186,
+          "acc_std": 0.0093482832648567,
+          "tokens_per_node": 320.43116
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.4347,
+          "acc_std": 0.010517604289951212,
+          "tokens_per_node": 385.17216499999995
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.380895,
+          "acc_std": 0.0110482566498068,
+          "tokens_per_node": 514.674165
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.327575,
+          "acc_std": 0.01072307675063459,
+          "tokens_per_node": 644.127285
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.24800000000000008,
+          "acc_std": 8.326672684688674e-17,
+          "tokens_per_node": 838.4920000000001
+        }
+      ],
+      "area": 0.381211625
+    },
+    "cns_nored|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 230.146
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.494,
+          "tokens_per_node": 266.296
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.47,
+          "tokens_per_node": 334.933
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.44,
+          "tokens_per_node": 403.399
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.375,
+          "tokens_per_node": 536.621
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.329,
+          "tokens_per_node": 664.912
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.38292499999999996
+    },
+    "cns_nored|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 223.411
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 255.623
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 322.854
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.481,
+          "tokens_per_node": 388.727
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.455,
+          "tokens_per_node": 517.933
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.399,
+          "tokens_per_node": 643.83
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.4259
+    },
+    "cns_nored|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501,
+          "tokens_per_node": 221.766
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.488,
+          "tokens_per_node": 251.904
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.439,
+          "tokens_per_node": 313.274
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.395,
+          "tokens_per_node": 376.451
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.325,
+          "tokens_per_node": 508.078
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.291,
+          "tokens_per_node": 645.114
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.35262499999999997
+    },
+    "cns_nored|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 223.644
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.502,
+          "tokens_per_node": 255.716
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.493,
+          "tokens_per_node": 323.391
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.481,
+          "tokens_per_node": 389.647
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.451,
+          "tokens_per_node": 517.298
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.396,
+          "tokens_per_node": 644.687
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.423875
+    },
+    "cns_nored|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 227.18
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 263.028
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.488,
+          "tokens_per_node": 329.431
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 393.172
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.436,
+          "tokens_per_node": 519.331
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.359,
+          "tokens_per_node": 647.188
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.41155
+    },
+    "cns_nored|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 226.608
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 263.272
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.492,
+          "tokens_per_node": 329.844
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 394.046
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.44,
+          "tokens_per_node": 518.994
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.367,
+          "tokens_per_node": 645.955
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.4149
+    },
+    "cns_nored|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 226.558
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 263.22
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 330.0
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 393.642
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.439,
+          "tokens_per_node": 518.578
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.365,
+          "tokens_per_node": 646.31
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.4146
+    },
+    "cns_nored|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.512,
+          "tokens_per_node": 225.135
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 260.099
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.49,
+          "tokens_per_node": 327.039
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 392.63
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.452,
+          "tokens_per_node": 521.82
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.38,
+          "tokens_per_node": 648.895
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.420475
+    },
+    "cns_nored|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.766
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 263.236
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 329.886
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.487,
+          "tokens_per_node": 392.942
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.434,
+          "tokens_per_node": 518.89
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.36,
+          "tokens_per_node": 646.577
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.4129
+    },
+    "cns_nored|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 221.091
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.508,
+          "tokens_per_node": 251.139
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 313.623
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.471,
+          "tokens_per_node": 373.96
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.405,
+          "tokens_per_node": 500.524
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.332,
+          "tokens_per_node": 631.723
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.397975
+    },
+    "cns_nored|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.501,
+          "tokens_per_node": 222.246
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.491,
+          "tokens_per_node": 254.396
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.465,
+          "tokens_per_node": 320.104
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.461,
+          "tokens_per_node": 385.137
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.425,
+          "tokens_per_node": 513.418
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.38,
+          "tokens_per_node": 644.796
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.40759999999999996
+    },
+    "cns_nored|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.506,
+          "tokens_per_node": 224.44
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.496,
+          "tokens_per_node": 259.162
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.481,
+          "tokens_per_node": 327.672
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.455,
+          "tokens_per_node": 391.531
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.402,
+          "tokens_per_node": 520.752
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.302,
+          "tokens_per_node": 650.507
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.384825
+    },
+    "cns_nored|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 227.869
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.509,
+          "tokens_per_node": 263.997
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 331.443
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.478,
+          "tokens_per_node": 393.565
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.43,
+          "tokens_per_node": 519.097
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.362,
+          "tokens_per_node": 647.485
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.41175
+    },
+    "cns_nored|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 225.298
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 261.758
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 328.075
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 391.964
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.441,
+          "tokens_per_node": 519.445
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.388,
+          "tokens_per_node": 646.613
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.42047499999999993
+    },
+    "cns_nored|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 225.046
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 258.405
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.677,
+          "tokens_per_node": 324.483
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.677,
+          "tokens_per_node": 389.617
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.677,
+          "tokens_per_node": 517.97
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.548,
+          "tokens_per_node": 645.008
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.248,
+          "tokens_per_node": 838.492
+        }
+      ],
+      "area": 0.5661
+    },
+    "cns_hints|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.5057649999999999,
+          "acc_std": 0.004411323497545837,
+          "tokens_per_node": 228.02541000000002
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.49595999999999996,
+          "acc_std": 0.006241666444147754,
+          "tokens_per_node": 265.02236999999997
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.47787499999999994,
+          "acc_std": 0.007833860797844185,
+          "tokens_per_node": 338.99288
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.459005,
+          "acc_std": 0.009354409388090727,
+          "tokens_per_node": 413.04377
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.421995,
+          "acc_std": 0.009880029099147434,
+          "tokens_per_node": 561.02545
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.38429500000000005,
+          "acc_std": 0.009389247839949702,
+          "tokens_per_node": 709.0306350000001
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.32799999999999996,
+          "acc_std": 5.551115123125783e-17,
+          "tokens_per_node": 931.1260000000001
+        }
+      ],
+      "area": 0.42167125000000005
+    },
+    "cns_hints|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.513,
+          "tokens_per_node": 231.6
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.499,
+          "tokens_per_node": 271.022
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.481,
+          "tokens_per_node": 348.849
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.457,
+          "tokens_per_node": 429.212
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.407,
+          "tokens_per_node": 585.005
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.378,
+          "tokens_per_node": 734.921
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.41769999999999996
+    },
+    "cns_hints|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 227.127
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.503,
+          "tokens_per_node": 262.617
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.501,
+          "tokens_per_node": 335.549
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.49,
+          "tokens_per_node": 410.682
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.474,
+          "tokens_per_node": 559.431
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.441,
+          "tokens_per_node": 705.431
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.45389999999999997
+    },
+    "cns_hints|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.505,
+          "tokens_per_node": 225.077
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.496,
+          "tokens_per_node": 259.038
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.475,
+          "tokens_per_node": 330.742
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.442,
+          "tokens_per_node": 403.839
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.391,
+          "tokens_per_node": 554.819
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.37,
+          "tokens_per_node": 708.619
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.409025
+    },
+    "cns_hints|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 226.882
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.502,
+          "tokens_per_node": 261.276
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 336.789
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.491,
+          "tokens_per_node": 411.453
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.471,
+          "tokens_per_node": 558.557
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.438,
+          "tokens_per_node": 706.055
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.452175
+    },
+    "cns_hints|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 230.293
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.508,
+          "tokens_per_node": 269.613
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 343.83
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.491,
+          "tokens_per_node": 417.041
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.462,
+          "tokens_per_node": 563.835
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.415,
+          "tokens_per_node": 710.127
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.445125
+    },
+    "cns_hints|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 230.893
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 270.289
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.501,
+          "tokens_per_node": 345.903
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.494,
+          "tokens_per_node": 418.684
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.467,
+          "tokens_per_node": 563.706
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.419,
+          "tokens_per_node": 710.043
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.4478
+    },
+    "cns_hints|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 230.89
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.507,
+          "tokens_per_node": 270.28
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.504,
+          "tokens_per_node": 345.74
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.494,
+          "tokens_per_node": 418.203
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.466,
+          "tokens_per_node": 563.184
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.418,
+          "tokens_per_node": 710.145
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.44775
+    },
+    "cns_hints|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.513,
+          "tokens_per_node": 228.097
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.508,
+          "tokens_per_node": 266.404
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.497,
+          "tokens_per_node": 340.1
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.492,
+          "tokens_per_node": 414.04
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.464,
+          "tokens_per_node": 562.484
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.416,
+          "tokens_per_node": 710.021
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.446125
+    },
+    "cns_hints|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.507,
+          "tokens_per_node": 230.951
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.508,
+          "tokens_per_node": 270.616
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.503,
+          "tokens_per_node": 345.411
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.496,
+          "tokens_per_node": 417.551
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.463,
+          "tokens_per_node": 563.498
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.417,
+          "tokens_per_node": 710.097
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.447075
+    },
+    "cns_hints|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 226.253
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.51,
+          "tokens_per_node": 261.184
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.504,
+          "tokens_per_node": 332.154
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.48,
+          "tokens_per_node": 402.464
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.441,
+          "tokens_per_node": 546.844
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.389,
+          "tokens_per_node": 698.286
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.43362500000000004
+    },
+    "cns_hints|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.505,
+          "tokens_per_node": 227.268
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.498,
+          "tokens_per_node": 263.729
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.476,
+          "tokens_per_node": 337.035
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.474,
+          "tokens_per_node": 412.539
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.462,
+          "tokens_per_node": 558.402
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.433,
+          "tokens_per_node": 707.9
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.444025
+    },
+    "cns_hints|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 229.141
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.501,
+          "tokens_per_node": 269.544
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.498,
+          "tokens_per_node": 346.992
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 421.055
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.446,
+          "tokens_per_node": 567.774
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.368,
+          "tokens_per_node": 716.134
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.42865
+    },
+    "cns_hints|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 231.117
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.511,
+          "tokens_per_node": 271.056
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.506,
+          "tokens_per_node": 347.365
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.486,
+          "tokens_per_node": 418.594
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.461,
+          "tokens_per_node": 563.911
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.416,
+          "tokens_per_node": 711.097
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.44555000000000006
+    },
+    "cns_hints|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.509,
+          "tokens_per_node": 229.157
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 269.045
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.503,
+          "tokens_per_node": 343.412
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.493,
+          "tokens_per_node": 415.787
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.466,
+          "tokens_per_node": 562.282
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.431,
+          "tokens_per_node": 709.138
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.4506
+    },
+    "cns_hints|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 228.817
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 267.239
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.653,
+          "tokens_per_node": 342.914
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.653,
+          "tokens_per_node": 415.08
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.653,
+          "tokens_per_node": 559.388
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.628,
+          "tokens_per_node": 704.368
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.328,
+          "tokens_per_node": 931.126
+        }
+      ],
+      "area": 0.5872999999999999
+    },
+    "keywords|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.5078,
+          "acc_std": 0.004370354676682436,
+          "tokens_per_node": 210.96883000000003
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.500405,
+          "acc_std": 0.006025029045573146,
+          "tokens_per_node": 230.84179500000002
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.485945,
+          "acc_std": 0.007789863605994658,
+          "tokens_per_node": 270.606765
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.47192500000000004,
+          "acc_std": 0.00848701213619963,
+          "tokens_per_node": 310.36222999999995
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.44347000000000003,
+          "acc_std": 0.009362643857372774,
+          "tokens_per_node": 389.92994000000004
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.41548999999999997,
+          "acc_std": 0.009194014357178254,
+          "tokens_per_node": 469.44892500000003
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.3730000000000001,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 588.7979999999999
+        }
+      ],
+      "area": 0.443695125
+    },
+    "keywords|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.516,
+          "tokens_per_node": 213.052
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.507,
+          "tokens_per_node": 234.308
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.5,
+          "tokens_per_node": 275.706
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.48,
+          "tokens_per_node": 317.118
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.454,
+          "tokens_per_node": 398.086
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.43,
+          "tokens_per_node": 477.228
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.45294999999999996
+    },
+    "keywords|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 210.606
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.506,
+          "tokens_per_node": 229.527
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.502,
+          "tokens_per_node": 268.78
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.489,
+          "tokens_per_node": 308.598
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.474,
+          "tokens_per_node": 387.713
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.445,
+          "tokens_per_node": 466.903
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.46192500000000003
+    },
+    "keywords|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.504,
+          "tokens_per_node": 210.014
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.497,
+          "tokens_per_node": 228.957
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.472,
+          "tokens_per_node": 268.223
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.449,
+          "tokens_per_node": 307.712
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.414,
+          "tokens_per_node": 388.432
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.398,
+          "tokens_per_node": 470.002
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.42815000000000003
+    },
+    "keywords|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 210.325
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 229.256
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.499,
+          "tokens_per_node": 269.137
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.489,
+          "tokens_per_node": 309.014
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.471,
+          "tokens_per_node": 387.593
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.446,
+          "tokens_per_node": 467.06
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.46115
+    },
+    "keywords|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 211.452
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.506,
+          "tokens_per_node": 232.016
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.495,
+          "tokens_per_node": 271.719
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.494,
+          "tokens_per_node": 310.86
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.464,
+          "tokens_per_node": 389.36
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.425,
+          "tokens_per_node": 469.122
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.45482500000000003
+    },
+    "keywords|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.511,
+          "tokens_per_node": 211.51
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 232.139
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.498,
+          "tokens_per_node": 272.274
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.493,
+          "tokens_per_node": 311.135
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.463,
+          "tokens_per_node": 389.083
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.429,
+          "tokens_per_node": 468.691
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.45585000000000003
+    },
+    "keywords|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 211.526
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.507,
+          "tokens_per_node": 232.174
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.501,
+          "tokens_per_node": 272.284
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.493,
+          "tokens_per_node": 311.054
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.462,
+          "tokens_per_node": 388.938
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.427,
+          "tokens_per_node": 468.836
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.45555
+    },
+    "keywords|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.512,
+          "tokens_per_node": 211.193
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.511,
+          "tokens_per_node": 231.586
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.501,
+          "tokens_per_node": 271.025
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.498,
+          "tokens_per_node": 310.672
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.485,
+          "tokens_per_node": 390.202
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.448,
+          "tokens_per_node": 469.577
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.46655
+    },
+    "keywords|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 211.542
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.507,
+          "tokens_per_node": 232.258
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.501,
+          "tokens_per_node": 272.05
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.495,
+          "tokens_per_node": 310.857
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.46,
+          "tokens_per_node": 389.2
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.426,
+          "tokens_per_node": 469.148
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.45510000000000006
+    },
+    "keywords|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.514,
+          "tokens_per_node": 209.764
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.515,
+          "tokens_per_node": 228.394
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.505,
+          "tokens_per_node": 266.449
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.482,
+          "tokens_per_node": 304.867
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.438,
+          "tokens_per_node": 382.803
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.399,
+          "tokens_per_node": 463.819
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.44329999999999997
+    },
+    "keywords|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.502,
+          "tokens_per_node": 210.414
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.492,
+          "tokens_per_node": 229.78
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.473,
+          "tokens_per_node": 268.769
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.476,
+          "tokens_per_node": 308.709
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.457,
+          "tokens_per_node": 387.682
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.442,
+          "tokens_per_node": 467.831
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.451425
+    },
+    "keywords|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 211.273
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.504,
+          "tokens_per_node": 231.871
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.5,
+          "tokens_per_node": 272.528
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.48,
+          "tokens_per_node": 311.844
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.458,
+          "tokens_per_node": 391.264
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.407,
+          "tokens_per_node": 472.13
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.44747499999999996
+    },
+    "keywords|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 211.763
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.511,
+          "tokens_per_node": 232.536
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.506,
+          "tokens_per_node": 272.64
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.484,
+          "tokens_per_node": 311.454
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.458,
+          "tokens_per_node": 389.568
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.425,
+          "tokens_per_node": 469.829
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.4537
+    },
+    "keywords|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.508,
+          "tokens_per_node": 211.091
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.505,
+          "tokens_per_node": 231.543
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.504,
+          "tokens_per_node": 271.2
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.492,
+          "tokens_per_node": 310.148
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.466,
+          "tokens_per_node": 388.505
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.439,
+          "tokens_per_node": 468.143
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.45925
+    },
+    "keywords|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 211.504
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 231.781
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.642,
+          "tokens_per_node": 271.574
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.642,
+          "tokens_per_node": 311.211
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.642,
+          "tokens_per_node": 390.342
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.642,
+          "tokens_per_node": 470.1
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.373,
+          "tokens_per_node": 588.798
+        }
+      ],
+      "area": 0.5926
+    },
+    "summary|random": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.5149999999999999,
+          "acc_std": 1.1102230246251565e-16,
+          "tokens_per_node": 191.10100000000006
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.513815,
+          "acc_std": 0.0037310554806917607,
+          "tokens_per_node": 234.66891999999999
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.512405,
+          "acc_std": 0.005002097060233842,
+          "tokens_per_node": 278.30125
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.5094449999999999,
+          "acc_std": 0.006598255451253769,
+          "tokens_per_node": 365.014115
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.506885,
+          "acc_std": 0.007518761533656996,
+          "tokens_per_node": 452.15853000000004
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.5015000000000001,
+          "acc_std": 0.0069598850565221314,
+          "tokens_per_node": 627.025445
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.49695,
+          "acc_std": 0.007610354788050298,
+          "tokens_per_node": 801.890285
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.48899999999999993,
+          "acc_std": 5.551115123125783e-17,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.501860875
+    },
+    "summary|degree": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.517,
+          "tokens_per_node": 261.908
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.512,
+          "tokens_per_node": 332.336
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.514,
+          "tokens_per_node": 466.478
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.502,
+          "tokens_per_node": 579.535
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.488,
+          "tokens_per_node": 759.21
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.501,
+          "tokens_per_node": 903.108
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.5000249999999999
+    },
+    "summary|A_only (confidence)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.521,
+          "tokens_per_node": 230.993
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.516,
+          "tokens_per_node": 269.269
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.516,
+          "tokens_per_node": 355.386
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.519,
+          "tokens_per_node": 438.423
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.524,
+          "tokens_per_node": 607.041
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.516,
+          "tokens_per_node": 776.607
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.5142249999999999
+    },
+    "summary|D_only": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.517,
+          "tokens_per_node": 221.455
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.514,
+          "tokens_per_node": 255.806
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.51,
+          "tokens_per_node": 322.666
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.509,
+          "tokens_per_node": 398.218
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.498,
+          "tokens_per_node": 601.204
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.493,
+          "tokens_per_node": 808.271
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.500825
+    },
+    "summary|AxD": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.518,
+          "tokens_per_node": 229.506
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.516,
+          "tokens_per_node": 266.257
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.518,
+          "tokens_per_node": 355.185
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.516,
+          "tokens_per_node": 443.553
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.522,
+          "tokens_per_node": 606.387
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.514,
+          "tokens_per_node": 778.565
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.512925
+    },
+    "summary|NB (Pi=identity)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.518,
+          "tokens_per_node": 247.468
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.522,
+          "tokens_per_node": 298.652
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.525,
+          "tokens_per_node": 382.37
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.528,
+          "tokens_per_node": 462.051
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.519,
+          "tokens_per_node": 630.132
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.503,
+          "tokens_per_node": 800.935
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.512525
+    },
+    "summary|NB (Pi=zero-shot est.)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.52,
+          "tokens_per_node": 247.886
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.518,
+          "tokens_per_node": 300.984
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.516,
+          "tokens_per_node": 390.607
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.521,
+          "tokens_per_node": 464.571
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.52,
+          "tokens_per_node": 627.102
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.502,
+          "tokens_per_node": 797.014
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.510325
+    },
+    "summary|NB (Pi=est.) [NeedNbr-TF]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.519,
+          "tokens_per_node": 247.931
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.519,
+          "tokens_per_node": 301.662
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.519,
+          "tokens_per_node": 390.294
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.521,
+          "tokens_per_node": 464.362
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.52,
+          "tokens_per_node": 627.062
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.503,
+          "tokens_per_node": 798.918
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.5109
+    },
+    "summary|learned g_phi [NeedNbr-L]": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 245.35
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.511,
+          "tokens_per_node": 294.982
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.506,
+          "tokens_per_node": 382.292
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.514,
+          "tokens_per_node": 469.633
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.515,
+          "tokens_per_node": 640.582
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.505,
+          "tokens_per_node": 812.399
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.507
+    },
+    "summary|NB with MLP pseudo-labels (no neighbour LLM calls)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.517,
+          "tokens_per_node": 249.921
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.519,
+          "tokens_per_node": 303.3
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.518,
+          "tokens_per_node": 390.557
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.526,
+          "tokens_per_node": 463.702
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.518,
+          "tokens_per_node": 628.946
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.506,
+          "tokens_per_node": 803.061
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.5118
+    },
+    "summary|LLM self-assessment": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.512,
+          "tokens_per_node": 225.604
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.513,
+          "tokens_per_node": 258.819
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.515,
+          "tokens_per_node": 332.116
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.517,
+          "tokens_per_node": 403.518
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.508,
+          "tokens_per_node": 557.884
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.497,
+          "tokens_per_node": 746.581
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.5052
+    },
+    "summary|A_only (calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.51,
+          "tokens_per_node": 229.142
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.51,
+          "tokens_per_node": 265.678
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.505,
+          "tokens_per_node": 345.964
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.514,
+          "tokens_per_node": 432.614
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.51,
+          "tokens_per_node": 606.449
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.502,
+          "tokens_per_node": 782.749
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.505075
+    },
+    "summary|NB (Pi=est., calibrated)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.514,
+          "tokens_per_node": 247.191
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.513,
+          "tokens_per_node": 300.438
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.519,
+          "tokens_per_node": 397.905
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.514,
+          "tokens_per_node": 484.481
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.497,
+          "tokens_per_node": 655.846
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.485,
+          "tokens_per_node": 845.414
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.50005
+    },
+    "summary|NB (Pi=est., tau=0.25)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.517,
+          "tokens_per_node": 254.522
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.52,
+          "tokens_per_node": 312.109
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.519,
+          "tokens_per_node": 397.677
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.519,
+          "tokens_per_node": 469.789
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.519,
+          "tokens_per_node": 632.162
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.508,
+          "tokens_per_node": 807.219
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.511625
+    },
+    "summary|NB (Pi=est., tau=1.0)": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.518,
+          "tokens_per_node": 240.268
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.517,
+          "tokens_per_node": 290.909
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.521,
+          "tokens_per_node": 378.892
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.518,
+          "tokens_per_node": 455.823
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.522,
+          "tokens_per_node": 617.516
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.51,
+          "tokens_per_node": 791.289
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.5126000000000001
+    },
+    "summary|oracle": {
+      "curve": [
+        {
+          "budget": 0.0,
+          "acc": 0.515,
+          "tokens_per_node": 191.101
+        },
+        {
+          "budget": 0.05,
+          "acc": 0.565,
+          "tokens_per_node": 237.97
+        },
+        {
+          "budget": 0.1,
+          "acc": 0.615,
+          "tokens_per_node": 284.023
+        },
+        {
+          "budget": 0.2,
+          "acc": 0.631,
+          "tokens_per_node": 369.454
+        },
+        {
+          "budget": 0.3,
+          "acc": 0.631,
+          "tokens_per_node": 449.325
+        },
+        {
+          "budget": 0.5,
+          "acc": 0.631,
+          "tokens_per_node": 617.978
+        },
+        {
+          "budget": 0.7,
+          "acc": 0.631,
+          "tokens_per_node": 799.87
+        },
+        {
+          "budget": 1.0,
+          "acc": 0.489,
+          "tokens_per_node": 1063.804
+        }
+      ],
+      "area": 0.6023000000000001
+    }
+  },
+  "spearman_vs_true_gain": {
+    "cns|degree": -0.02202724283396941,
+    "cns|A_only (confidence)": 0.27990350892670024,
+    "cns|D_only": -0.15755803310234093,
+    "cns|AxD": 0.26913621529082965,
+    "cns|NB (Pi=identity)": 0.14334389945315468,
+    "cns|NB (Pi=zero-shot est.)": 0.1541813477346998,
+    "cns|NB (Pi=est.) [NeedNbr-TF]": 0.15188594004165326,
+    "cns|learned g_phi [NeedNbr-L]": 0.2542070095615232,
+    "cns|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.1426967160148296,
+    "cns|LLM self-assessment": 0.13040513091908956,
+    "cns|A_only (calibrated)": 0.1430698590884843,
+    "cns|NB (Pi=est., calibrated)": -0.023755936332152915,
+    "cns|NB (Pi=est., tau=0.25)": 0.11538934226492913,
+    "cns|NB (Pi=est., tau=1.0)": 0.21412878526263823,
+    "similar|degree": -0.0004258202187195534,
+    "similar|A_only (confidence)": 0.2675629136064619,
+    "similar|D_only": -0.179845870216093,
+    "similar|AxD": 0.25609291932554534,
+    "similar|NB (Pi=identity)": 0.13644747230267154,
+    "similar|NB (Pi=zero-shot est.)": 0.1475576895752571,
+    "similar|NB (Pi=est.) [NeedNbr-TF]": 0.14404900725616596,
+    "similar|learned g_phi [NeedNbr-L]": 0.2423902710621296,
+    "similar|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.135412287853631,
+    "similar|LLM self-assessment": 0.12648960707559406,
+    "similar|A_only (calibrated)": 0.14089730777587453,
+    "similar|NB (Pi=est., calibrated)": -0.02322186751050169,
+    "similar|NB (Pi=est., tau=0.25)": 0.10893794187645335,
+    "similar|NB (Pi=est., tau=1.0)": 0.20144934535768622,
+    "random|degree": -0.0009005473938584034,
+    "random|A_only (confidence)": 0.2676683861020365,
+    "random|D_only": -0.1641250708410864,
+    "random|AxD": 0.25798347700342167,
+    "random|NB (Pi=identity)": 0.13045052878166447,
+    "random|NB (Pi=zero-shot est.)": 0.1424565331896771,
+    "random|NB (Pi=est.) [NeedNbr-TF]": 0.13894894999396706,
+    "random|learned g_phi [NeedNbr-L]": 0.2332811558182828,
+    "random|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.13048966553196004,
+    "random|LLM self-assessment": 0.11553422613659879,
+    "random|A_only (calibrated)": 0.13227422186011234,
+    "random|NB (Pi=est., calibrated)": -0.027336606366854043,
+    "random|NB (Pi=est., tau=0.25)": 0.10488820428729163,
+    "random|NB (Pi=est., tau=1.0)": 0.20001009868386033,
+    "cns_id|degree": -0.0076138000117970004,
+    "cns_id|A_only (confidence)": 0.28655214018355823,
+    "cns_id|D_only": -0.17842664328707095,
+    "cns_id|AxD": 0.2755850969071046,
+    "cns_id|NB (Pi=identity)": 0.14400000487325787,
+    "cns_id|NB (Pi=zero-shot est.)": 0.15566805743488515,
+    "cns_id|NB (Pi=est.) [NeedNbr-TF]": 0.15242620677071433,
+    "cns_id|learned g_phi [NeedNbr-L]": 0.26135697250010775,
+    "cns_id|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.14270156594058153,
+    "cns_id|LLM self-assessment": 0.132683040691671,
+    "cns_id|A_only (calibrated)": 0.14744061910227138,
+    "cns_id|NB (Pi=est., calibrated)": -0.025824587206928953,
+    "cns_id|NB (Pi=est., tau=0.25)": 0.11486005572301933,
+    "cns_id|NB (Pi=est., tau=1.0)": 0.21393656620561521,
+    "cns_nored|degree": -0.0027671384288324957,
+    "cns_nored|A_only (confidence)": 0.2688712983892994,
+    "cns_nored|D_only": -0.1683725402825473,
+    "cns_nored|AxD": 0.2606338110634951,
+    "cns_nored|NB (Pi=identity)": 0.13993649777660713,
+    "cns_nored|NB (Pi=zero-shot est.)": 0.15799202408457647,
+    "cns_nored|NB (Pi=est.) [NeedNbr-TF]": 0.1545124314769385,
+    "cns_nored|learned g_phi [NeedNbr-L]": 0.240854684046946,
+    "cns_nored|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.14600273130126154,
+    "cns_nored|LLM self-assessment": 0.119000575348515,
+    "cns_nored|A_only (calibrated)": 0.1429865545579851,
+    "cns_nored|NB (Pi=est., calibrated)": -0.016588763635565176,
+    "cns_nored|NB (Pi=est., tau=0.25)": 0.11964408771481085,
+    "cns_nored|NB (Pi=est., tau=1.0)": 0.20413423877565623,
+    "cns_hints|degree": -0.03318358848228616,
+    "cns_hints|A_only (confidence)": 0.2011114215052935,
+    "cns_hints|D_only": -0.07544350770695515,
+    "cns_hints|AxD": 0.19891976319585217,
+    "cns_hints|NB (Pi=identity)": 0.12199715567917754,
+    "cns_hints|NB (Pi=zero-shot est.)": 0.13284859436481744,
+    "cns_hints|NB (Pi=est.) [NeedNbr-TF]": 0.13117907346442997,
+    "cns_hints|learned g_phi [NeedNbr-L]": 0.15294267301098913,
+    "cns_hints|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.12804597537067355,
+    "cns_hints|LLM self-assessment": 0.09060714096702072,
+    "cns_hints|A_only (calibrated)": 0.12866584210214604,
+    "cns_hints|NB (Pi=est., calibrated)": 0.018142948480785126,
+    "cns_hints|NB (Pi=est., tau=0.25)": 0.10726358100761144,
+    "cns_hints|NB (Pi=est., tau=1.0)": 0.16263459371472605,
+    "keywords|degree": 0.04898065807982985,
+    "keywords|A_only (confidence)": 0.10524066643126606,
+    "keywords|D_only": -0.10188076185094393,
+    "keywords|AxD": 0.10124220799414552,
+    "keywords|NB (Pi=identity)": 0.04628868383708001,
+    "keywords|NB (Pi=zero-shot est.)": 0.05132103578308508,
+    "keywords|NB (Pi=est.) [NeedNbr-TF]": 0.049070274070131405,
+    "keywords|learned g_phi [NeedNbr-L]": 0.14075161234354902,
+    "keywords|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.04930386259938865,
+    "keywords|LLM self-assessment": 0.010427927901632973,
+    "keywords|A_only (calibrated)": 0.030624380947575112,
+    "keywords|NB (Pi=est., calibrated)": 0.00014922984216162388,
+    "keywords|NB (Pi=est., tau=0.25)": 0.04212720681961142,
+    "keywords|NB (Pi=est., tau=1.0)": 0.07749300491747382,
+    "summary|degree": -0.005644377073045797,
+    "summary|A_only (confidence)": 0.08553512152092729,
+    "summary|D_only": -0.01284481648463911,
+    "summary|AxD": 0.08737732310176587,
+    "summary|NB (Pi=identity)": 0.06330165416597901,
+    "summary|NB (Pi=zero-shot est.)": 0.05744724830220443,
+    "summary|NB (Pi=est.) [NeedNbr-TF]": 0.05817044680078296,
+    "summary|learned g_phi [NeedNbr-L]": 0.03756356548347529,
+    "summary|NB with MLP pseudo-labels (no neighbour LLM calls)": 0.06039135029810692,
+    "summary|LLM self-assessment": 0.02132765915255656,
+    "summary|A_only (calibrated)": 0.026875823482788726,
+    "summary|NB (Pi=est., calibrated)": -0.02755341486884429,
+    "summary|NB (Pi=est., tau=0.25)": 0.058851703044094844,
+    "summary|NB (Pi=est., tau=1.0)": 0.06717825873043153
+  },
+  "auto_threshold": {
+    "NeedNbr-auto (NB, val-tuned threshold)": {
+      "threshold": 0.2695570111509491,
+      "val_acc": 0.5833333333333334,
+      "routed_frac": 0.214,
+      "acc": 0.495,
+      "tokens_per_node": 341.775
+    },
+    "A_only-auto (val-tuned threshold)": {
+      "threshold": 0.43374735436060574,
+      "val_acc": 0.5733333333333334,
+      "routed_frac": 0.136,
+      "acc": 0.498,
+      "tokens_per_node": 280.418
+    }
+  },
+  "by_sig_tercile": [
+    {
+      "tercile": 0,
+      "n": 334,
+      "acc_f0": 0.6407185628742516,
+      "acc_f1_random": 0.23353293413173654,
+      "acc_f1_similar": 0.23053892215568864,
+      "acc_f1_cns": 0.2155688622754491
+    },
+    {
+      "tercile": 1,
+      "n": 333,
+      "acc_f0": 0.5435435435435435,
+      "acc_f1_random": 0.2732732732732733,
+      "acc_f1_similar": 0.26126126126126126,
+      "acc_f1_cns": 0.2702702702702703
+    },
+    {
+      "tercile": 2,
+      "n": 333,
+      "acc_f0": 0.36036036036036034,
+      "acc_f1_random": 0.24624624624624625,
+      "acc_f1_similar": 0.24624624624624625,
+      "acc_f1_cns": 0.24924924924924924
+    }
+  ],
+  "llm_gnn": {
+    "acc_gcn": 0.7,
+    "acc_f0_gcn_ensemble": 0.63,
+    "acc_needNbr20_to_gcn": 0.594
+  },
+  "significance_needNbr20": {
+    "f0 (text only)": {
+      "delta_acc": -0.018,
+      "ci95": [
+        -0.035,
+        -0.001
+      ],
+      "p_mcnemar": 0.056664426345121144,
+      "n": 1000
+    },
+    "f1 random (all nodes)": {
+      "delta_acc": 0.246,
+      "ci95": [
+        0.203,
+        0.287
+      ],
+      "p_mcnemar": 1.26949644964155e-28,
+      "n": 1000
+    },
+    "f1 similar (all nodes)": {
+      "delta_acc": 0.251,
+      "ci95": [
+        0.207,
+        0.294
+      ],
+      "p_mcnemar": 3.8886019737668193e-29,
+      "n": 1000
+    },
+    "f1 cns (all nodes)": {
+      "delta_acc": 0.252,
+      "ci95": [
+        0.208,
+        0.294
+      ],
+      "p_mcnemar": 7.476172238342966e-29,
+      "n": 1000
+    },
+    "f1 summary (all nodes)": {
+      "delta_acc": 0.008,
+      "ci95": [
+        -0.023,
+        0.04
+      ],
+      "p_mcnemar": 0.6567680752327201,
+      "n": 1000
+    },
+    "A_only (confidence) @20%": {
+      "delta_acc": -0.002,
+      "ci95": [
+        -0.017,
+        0.013
+      ],
+      "p_mcnemar": 0.8974218269914307,
+      "n": 1000
+    },
+    "LLM self-assessment @20%": {
+      "delta_acc": 0.004,
+      "ci95": [
+        -0.016024999999999998,
+        0.025
+      ],
+      "p_mcnemar": 0.778876092002701,
+      "n": 1000
+    },
+    "NB (Pi=identity) @20%": {
+      "delta_acc": 0.007,
+      "ci95": [
+        -0.002,
+        0.017
+      ],
+      "p_mcnemar": 0.21003961563110352,
+      "n": 1000
+    },
+    "degree @20%": {
+      "delta_acc": 0.027,
+      "ci95": [
+        0.002,
+        0.053
+      ],
+      "p_mcnemar": 0.041372422999386,
+      "n": 1000
+    },
+    "learned g_phi [NeedNbr-L] @20%": {
+      "delta_acc": 0.006,
+      "ci95": [
+        -0.012,
+        0.025
+      ],
+      "p_mcnemar": 0.5942882951469399,
+      "n": 1000
+    },
+    "random router @20% (seeded draw)": {
+      "delta_acc": 0.018,
+      "ci95": [
+        -0.006024999999999999,
+        0.043
+      ],
+      "p_mcnemar": 0.17877726804917524,
+      "n": 1000
+    },
+    "NeedNbr-TF @20% w/ random neighbours": {
+      "delta_acc": 0.002,
+      "ci95": [
+        0.0,
+        0.005
+      ],
+      "p_mcnemar": 0.5,
+      "n": 1000
+    },
+    "GCN (20 labels/class)": {
+      "delta_acc": -0.203,
+      "ci95": [
+        -0.243,
+        -0.164
+      ],
+      "p_mcnemar": 1.811086508354838e-22,
+      "n": 1000
+    },
+    "f0 + GCN ensemble": {
+      "delta_acc": -0.133,
+      "ci95": [
+        -0.161,
+        -0.106
+      ],
+      "p_mcnemar": 2.7799069000574075e-22,
+      "n": 1000
+    },
+    "NeedNbr-TF@20% -> GCN": {
+      "delta_acc": -0.097,
+      "ci95": [
+        -0.121,
+        -0.074
+      ],
+      "p_mcnemar": 1.5818511154852923e-16,
+      "n": 1000
+    }
+  },
+  "gain_breakdown": {
+    "random": {
+      "helped": 0.161,
+      "hurt": 0.425,
+      "net": -0.264,
+      "helped_in_routed20": 0.18633540372670807,
+      "hurt_in_routed20": 0.11764705882352941,
+      "net_routed20": -0.020000000000000004
+    },
+    "similar": {
+      "helped": 0.163,
+      "hurt": 0.432,
+      "net": -0.269,
+      "helped_in_routed20": 0.17791411042944785,
+      "hurt_in_routed20": 0.11574074074074074,
+      "net_routed20": -0.021
+    },
+    "cns": {
+      "helped": 0.169,
+      "hurt": 0.439,
+      "net": -0.27,
+      "helped_in_routed20": 0.1834319526627219,
+      "hurt_in_routed20": 0.11161731207289294,
+      "net_routed20": -0.018000000000000002
+    },
+    "cns_id": {
+      "helped": 0.17,
+      "hurt": 0.445,
+      "net": -0.275,
+      "helped_in_routed20": 0.17647058823529413,
+      "hurt_in_routed20": 0.11235955056179775,
+      "net_routed20": -0.020000000000000004
+    },
+    "cns_nored": {
+      "helped": 0.162,
+      "hurt": 0.429,
+      "net": -0.267,
+      "helped_in_routed20": 0.18518518518518517,
+      "hurt_in_routed20": 0.11655011655011654,
+      "net_routed20": -0.020000000000000004
+    },
+    "cns_hints": {
+      "helped": 0.138,
+      "hurt": 0.325,
+      "net": -0.187,
+      "helped_in_routed20": 0.1956521739130435,
+      "hurt_in_routed20": 0.11692307692307692,
+      "net_routed20": -0.011
+    },
+    "keywords": {
+      "helped": 0.127,
+      "hurt": 0.269,
+      "net": -0.14200000000000002,
+      "helped_in_routed20": 0.2283464566929134,
+      "hurt_in_routed20": 0.15985130111524162,
+      "net_routed20": -0.013999999999999995
+    },
+    "summary": {
+      "helped": 0.116,
+      "hurt": 0.142,
+      "net": -0.02599999999999998,
+      "helped_in_routed20": 0.25862068965517243,
+      "hurt_in_routed20": 0.18309859154929578,
+      "net_routed20": 0.004
+    },
+    "_any_strategy_fixes": 0.203
+  },
+  "adj_homophily": 0.3339031281375707,
+  "by_local_homophily": [
+    {
+      "bin": "[0.00,0.25)",
+      "n": 199,
+      "acc_f0": 0.37185929648241206,
+      "acc_needNbr20": 0.36180904522613067,
+      "routed_frac": 0.1306532663316583,
+      "acc_f1_random": 0.38190954773869346,
+      "acc_f1_similar": 0.3768844221105528,
+      "acc_f1_cns": 0.39195979899497485
+    },
+    {
+      "bin": "[0.25,0.50)",
+      "n": 117,
+      "acc_f0": 0.49572649572649574,
+      "acc_needNbr20": 0.48717948717948717,
+      "routed_frac": 0.29914529914529914,
+      "acc_f1_random": 0.37606837606837606,
+      "acc_f1_similar": 0.3333333333333333,
+      "acc_f1_cns": 0.3504273504273504
+    },
+    {
+      "bin": "[0.50,0.75)",
+      "n": 246,
+      "acc_f0": 0.6300813008130082,
+      "acc_needNbr20": 0.5975609756097561,
+      "routed_frac": 0.23577235772357724,
+      "acc_f1_random": 0.22764227642276422,
+      "acc_f1_similar": 0.23170731707317074,
+      "acc_f1_cns": 0.21138211382113822
+    },
+    {
+      "bin": "[0.75,1.00]",
+      "n": 438,
+      "acc_f0": 0.5205479452054794,
+      "acc_needNbr20": 0.5045662100456622,
+      "routed_frac": 0.18493150684931506,
+      "acc_f1_random": 0.17123287671232876,
+      "acc_f1_similar": 0.17123287671232876,
+      "acc_f1_cns": 0.1689497716894977
+    }
+  ],
+  "overhead": {
+    "cns_sec_per_node": 0.0024242438555050353,
+    "sig_sec_per_node": 8.314570483679955e-05
+  },
+  "routed_profile": {
+    "degree": {
+      "routed": 7.11,
+      "not_routed": 5.21375
+    },
+    "text_len": {
+      "routed": 37.42,
+      "not_routed": 36.245
+    },
+    "ambiguity_A": {
+      "routed": 0.4244977802712438,
+      "not_routed": 0.10174510555927167
+    },
+    "f0_correct": {
+      "routed": 0.34,
+      "not_routed": 0.55875
+    }
+  },
+  "cases": [
+    {
+      "node": 27,
+      "true": "American film actors (only)",
+      "f0_pred": "American film actors and American television actors",
+      "text": "node name: Justin Guarini; the number of words introducing the node on Wikipedia: 14438; node type: starring; Some key words on Wikipedia pages: Musicians from Pennsylvania,American Idol participants,",
+      "similar_neighbours_true_labels": [
+        "American film actors (only)",
+        "American film actors and American television actors",
+        "American film actors and American television actors",
+        "American television actors and American stage actors",
+        "American film actors (only)"
+      ],
+      "cns_neighbours_true_labels": [
+        "American film actors and American television actors",
+        "American film actors (only)",
+        "American film actors and American television actors",
+        "American film actors and American television actors",
+        "American film actors (only)"
+      ],
+      "f1_similar_pred": "American film actors and American television actors",
+      "f1_cns_pred": "American film actors (only)"
+    },
+    {
+      "node": 754,
+      "true": "Canadian actors",
+      "f0_pred": "American television actors and American stage actors",
+      "text": "node name: Kett Turton; the number of words introducing the node on Wikipedia: 12160; node type: starring; Some key words on Wikipedia pages: 1982 births,Living people,Oregon actors,People from Portla",
+      "similar_neighbours_true_labels": [
+        "American film actors (only)",
+        "Canadian actors",
+        "English actors",
+        "Canadian actors",
+        "American film actors and American television actors"
+      ],
+      "cns_neighbours_true_labels": [
+        "English actors",
+        "American film actors and American television actors",
+        "Canadian actors",
+        "American film actors and American television actors",
+        "American film actors (only)"
+      ],
+      "f1_similar_pred": "American film actors (only)",
+      "f1_cns_pred": "Canadian actors"
+    },
+    {
+      "node": 1044,
+      "true": "English actors",
+      "f0_pred": "American television actors and American stage actors",
+      "text": "node name: Donald Sinden; the number of words introducing the node on Wikipedia: 9653; node type: starring; Some key words on Wikipedia pages: 1923 births,Living people,Commanders of the Order of the ",
+      "similar_neighbours_true_labels": [
+        "English actors",
+        "English actors",
+        "English actors",
+        "English actors",
+        "English actors"
+      ],
+      "cns_neighbours_true_labels": [
+        "English actors",
+        "American film actors (only)",
+        "English actors",
+        "English actors",
+        "English actors"
+      ],
+      "f1_similar_pred": "American film actors (only)",
+      "f1_cns_pred": "English actors"
+    }
+  ]
+}

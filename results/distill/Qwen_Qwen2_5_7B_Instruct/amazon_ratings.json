@@ -1,0 +1,27 @@
+{
+  "n_annotated": 2000,
+  "f0 only": {
+    "pseudo_label_acc": 0.4445,
+    "gcn_test_acc": 0.2733333333333334,
+    "gcn_test_std": 0.0009428090415820641,
+    "llm_prompt_tokens": 471223.0
+  },
+  "NeedNbr routing (20%)": {
+    "pseudo_label_acc": 0.4185,
+    "gcn_test_acc": 0.27466666666666667,
+    "gcn_test_std": 0.0009428090415820641,
+    "llm_prompt_tokens": 823750.0
+  },
+  "graph-augmented for all": {
+    "pseudo_label_acc": 0.3345,
+    "gcn_test_acc": 0.27166666666666667,
+    "gcn_test_std": 0.002867441755680878,
+    "llm_prompt_tokens": 2217395.0
+  },
+  "NB posterior (no extra calls)": {
+    "pseudo_label_acc": 0.4085,
+    "gcn_test_acc": 0.274,
+    "gcn_test_std": 0.0,
+    "llm_prompt_tokens": 471223.0
+  }
+}

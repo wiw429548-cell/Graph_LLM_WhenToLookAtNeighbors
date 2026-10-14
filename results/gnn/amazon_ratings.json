@@ -1,0 +1,44 @@
+{
+  "mlp": {
+    "test_acc_mean": 0.33118198560187506,
+    "test_acc_std": 0.033311486307403625,
+    "test_eval_acc_mean": 0.3218,
+    "test_eval_acc_std": 0.039249968152853316
+  },
+  "gcn": {
+    "test_acc_mean": 0.31801439812489535,
+    "test_acc_std": 0.02326735261859098,
+    "test_eval_acc_mean": 0.31239999999999996,
+    "test_eval_acc_std": 0.01419295599936815
+  },
+  "sage": {
+    "test_acc_mean": 0.3252887995981918,
+    "test_acc_std": 0.03630420454999522,
+    "test_eval_acc_mean": 0.30639999999999995,
+    "test_eval_acc_std": 0.0385932636609033
+  },
+  "gat": {
+    "test_acc_mean": 0.3364222333835593,
+    "test_acc_std": 0.03841100491404835,
+    "test_eval_acc_mean": 0.3232,
+    "test_eval_acc_std": 0.03873189899811264
+  },
+  "gprgnn": {
+    "test_acc_mean": 0.31663318265528206,
+    "test_acc_std": 0.011752184429099732,
+    "test_eval_acc_mean": 0.301,
+    "test_eval_acc_std": 0.013371611720357434
+  },
+  "h2gcn": {
+    "test_acc_mean": 0.33527540599363803,
+    "test_acc_std": 0.033165999902020946,
+    "test_eval_acc_mean": 0.3252,
+    "test_eval_acc_std": 0.02910944863785639
+  },
+  "label_propagation": {
+    "test_acc_mean": 0.23907584128578604,
+    "test_acc_std": 0.0,
+    "test_eval_acc_mean": 0.237,
+    "test_eval_acc_std": 0.0
+  }
+}

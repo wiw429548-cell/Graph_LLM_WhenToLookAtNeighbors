@@ -1,0 +1,20 @@
+# data and caches (recreated by run_all.py)
+data/
+logs/
+run.log
+*.sqlite
+
+# large per-prompt outputs and regenerated artefacts
+results/llm/
+results/gnn/probs_*.npy
+results/figures/
+paper/figures/*.pdf
+paper/figures/png/
+paper/tables/
+paper/numbers.tex
+
+# python
+__pycache__/
+*.pyc
+*.tmp
+*.part

@@ -1,0 +1,60 @@
+{
+  "dataset": "cora",
+  "llm": "Qwen_Qwen2_5_7B_Instruct",
+  "k_sensitivity": {
+    "k=3": {
+      "acc_f0": 0.598,
+      "random": {
+        "all": 0.573,
+        "needNbr@20%": 0.604,
+        "tokens_f1": 672.011
+      },
+      "similar": {
+        "all": 0.554,
+        "needNbr@20%": 0.595,
+        "tokens_f1": 697.764
+      },
+      "cns": {
+        "all": 0.547,
+        "needNbr@20%": 0.586,
+        "tokens_f1": 631.97
+      }
+    },
+    "k=5": {
+      "acc_f0": 0.598,
+      "random": {
+        "all": 0.552,
+        "needNbr@20%": 0.599,
+        "tokens_f1": 884.953
+      },
+      "similar": {
+        "all": 0.532,
+        "needNbr@20%": 0.592,
+        "tokens_f1": 929.083
+      },
+      "cns": {
+        "all": 0.526,
+        "needNbr@20%": 0.591,
+        "tokens_f1": 835.869
+      }
+    },
+    "k=10": {
+      "acc_f0": 0.598,
+      "random": {
+        "all": 0.52,
+        "needNbr@20%": 0.582,
+        "tokens_f1": 1357.424
+      },
+      "similar": {
+        "all": 0.511,
+        "needNbr@20%": 0.578,
+        "tokens_f1": 1420.807
+      },
+      "cns": {
+        "all": 0.504,
+        "needNbr@20%": 0.587,
+        "tokens_f1": 1307.405
+      }
+    }
+  }
+}

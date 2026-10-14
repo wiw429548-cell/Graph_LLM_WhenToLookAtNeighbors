@@ -1,0 +1,60 @@
+# =====================================================================
+# NeedNbr — global configuration (run_all.py reads this file)
+# =====================================================================
+seed: 2026
+
+models:
+  llms:                                      # LLM-as-predictor backbones
+    - Qwen/Qwen2.5-7B-Instruct
+    - Qwen/Qwen3-8B
+    - meta-llama/Llama-3.1-8B-Instruct       # gated: needs HF_TOKEN; skipped automatically otherwise
+  large_llm: Qwen/Qwen2.5-32B-Instruct-AWQ   # scaling analysis (needs 2 GPUs or one >= 40GB GPU)
+  small_llm: Qwen/Qwen2.5-3B-Instruct        # scaling analysis, small end (3B / 7B / 32B of the same family)
+  embedder: BAAI/bge-base-en-v1.5            # node text embeddings (similarity + GNN features)
+  max_model_len: 8192
+  gpu_mem: 0.85
+
+split:
+  train_per_class: 20        # low-label regime (where LLMs help most, cf. LLMNodeBed)
+  val_frac: 0.15
+  val_max: 500
+  n_test_eval: 1000          # LLM evaluation on a fixed random subset of test nodes
+  n_val_gain: 300            # validation nodes on which the learned router g_phi is trained
+
+prompt:
+  target_words: 350
+  neighbor_words: 120
+  k_neighbors: 5             # neighbors shown to the LLM in graph-augmented mode
+  max_candidates: 30         # candidate pool (1-hop, then 2-hop) for neighbor selection
+
+routing:
+  budgets: [0.0, 0.05, 0.1, 0.2, 0.3, 0.5, 0.7, 1.0]
+  nb_temperature: 0.5        # tempering of neighbor messages in the naive-Bayes posterior
+
+datasets:
+  # ---------- homophilic (LLMNodeBed)
+  cora:      {src: llmnodebed, file: cora.pt,      node: "scientific paper", nodes: "scientific papers", edge: "citation", domain: "a citation network of machine-learning papers", task: "research topic"}
+  citeseer:  {src: llmnodebed, file: citeseer.pt,  node: "scientific paper", nodes: "scientific papers", edge: "citation", domain: "a citation network of computer-science papers", task: "research area"}
+  pubmed:    {src: llmnodebed, file: pubmed.pt,    node: "biomedical paper", nodes: "biomedical papers", edge: "citation", domain: "a citation network of diabetes papers", task: "diabetes category"}
+  arxiv:     {src: llmnodebed, file: arxiv.pt,     node: "arXiv paper", nodes: "arXiv papers", edge: "citation", domain: "the arXiv computer-science citation network", task: "arXiv CS sub-category"}
+  wikics:    {src: llmnodebed, file: wikics.pt,    node: "Wikipedia article", nodes: "Wikipedia articles", edge: "hyperlink", links: "hyperlinks", domain: "Wikipedia computer-science articles", task: "computer-science branch"}
+  instagram: {src: llmnodebed, file: instagram.pt, node: "Instagram user profile", nodes: "Instagram user profiles", edge: "follow", domain: "an Instagram social network", task: "user type"}
+  reddit:    {src: llmnodebed, file: reddit.pt,    node: "Reddit user (their recent posts)", nodes: "Reddit users (their recent posts)", edge: "reply", domain: "a Reddit reply network", task: "user popularity"}
+  history:   {src: llmnodebed, file: history.pt,   node: "history book on Amazon", nodes: "history books on Amazon", edge: "co-purchased / co-viewed", domain: "an Amazon book co-purchase network", task: "book category"}
+  photo:     {src: llmnodebed, file: photo.pt,     node: "Amazon electronics product (user review)", nodes: "Amazon electronics products (user reviews)", edge: "co-purchased / co-viewed", domain: "an Amazon photo-equipment network", task: "product category"}
+  computer:  {src: llmnodebed, file: computer.pt,  node: "Amazon computer product (user review)", nodes: "Amazon computer products (user reviews)", edge: "co-purchased / co-viewed", domain: "an Amazon computer-products network", task: "product category"}
+  # ---------- heterophilic
+  cornell:    {src: llmnodebed, file: cornell.pt,    node: "university web page", nodes: "university web pages", edge: "hyperlink", links: "hyperlinks", domain: "the Cornell WebKB hyperlink graph", task: "page type", hetero: true}
+  texas:      {src: llmnodebed, file: texas.pt,      node: "university web page", nodes: "university web pages", edge: "hyperlink", links: "hyperlinks", domain: "the Texas WebKB hyperlink graph", task: "page type", hetero: true}
+  washington: {src: llmnodebed, file: washington.pt, node: "university web page", nodes: "university web pages", edge: "hyperlink", links: "hyperlinks", domain: "the Washington WebKB hyperlink graph", task: "page type", hetero: true}
+  wisconsin:  {src: llmnodebed, file: wisconsin.pt,  node: "university web page", nodes: "university web pages", edge: "hyperlink", links: "hyperlinks", domain: "the Wisconsin WebKB hyperlink graph", task: "page type", hetero: true}
+  actor:      {src: hetgb, dir: Actor,  node: "Wikipedia page about a film actor", nodes: "Wikipedia pages about film actors", edge: "co-occurrence on the same Wikipedia page", links: "co-occurrence links (both actors are mentioned on the same Wikipedia page)", domain: "the HeTGB Actor graph", task: "actor category", hetero: true}
+  amazon_ratings: {src: hetgb, dir: Amazon, node: "Amazon product", nodes: "Amazon products", edge: "frequently co-purchased", domain: "the HeTGB Amazon-ratings graph", task: "average rating class", hetero: true}
+
+main_datasets: [cora, citeseer, pubmed, arxiv, wikics, instagram, reddit, history, photo, computer, cornell, texas, washington, wisconsin, actor, amazon_ratings]
+scale_datasets: [cora, pubmed, wikics, history, cornell, actor]     # 3B and 32B models
+distill_datasets: [arxiv, history, computer, amazon_ratings]         # RQ6 (larger graphs)
+k_sens_datasets: [cora, pubmed, history, cornell, actor]             # number-of-neighbours sensitivity (first LLM)
+k_sens_values: [3, 10]                                               # main value: prompt.k_neighbors = 5
+scale_strategies: [random, similar, cns]                             # neighbour strategies of the 3B / 32B scaling runs
+graphicl_llms: 1                                                     # GraphICL-style baseline for the first N base LLMs

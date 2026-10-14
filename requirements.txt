@@ -1,0 +1,12 @@
+vllm>=0.8.5          # Qwen3 support
+torch
+torch_geometric
+transformers>=4.51  # Qwen3 support
+sentence-transformers>=3.0
+scikit-learn
+scipy
+numpy
+pyyaml
+matplotlib
+sentencepiece
+protobuf
